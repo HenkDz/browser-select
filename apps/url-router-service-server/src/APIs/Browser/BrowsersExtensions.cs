@@ -10,7 +10,9 @@ public static class BrowsersExtensions
         return new Browser
         {
             CreatedAt = model.CreatedAt,
+            ExecutablePath = model.ExecutablePath,
             Id = model.Id,
+            Name = model.Name,
             UpdatedAt = model.UpdatedAt,
         };
     }
@@ -20,7 +22,12 @@ public static class BrowsersExtensions
         BrowserWhereUniqueInput uniqueId
     )
     {
-        var browser = new BrowserDbModel { Id = uniqueId.Id };
+        var browser = new BrowserDbModel
+        {
+            Id = uniqueId.Id,
+            ExecutablePath = updateDto.ExecutablePath,
+            Name = updateDto.Name
+        };
 
         if (updateDto.CreatedAt != null)
         {

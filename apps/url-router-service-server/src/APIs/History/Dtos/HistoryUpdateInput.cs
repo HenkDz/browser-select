@@ -1,14 +1,16 @@
 namespace UrlRouterService.APIs.Dtos;
 
-public class BrowserUpdateInput
+public class HistoryUpdateInput
 {
     public DateTime? CreatedAt { get; set; }
 
-    public string? ExecutablePath { get; set; }
-
     public string? Id { get; set; }
 
-    public string? Name { get; set; }
+    public string? SelectedBrowser { get; set; }
+
+    public DateTime? Timestamp { get; set; }
 
     public DateTime? UpdatedAt { get; set; }
+
+    public string? Url { get; set; }
 }

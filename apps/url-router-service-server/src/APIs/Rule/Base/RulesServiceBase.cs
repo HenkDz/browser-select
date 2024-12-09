@@ -26,7 +26,11 @@ public abstract class RulesServiceBase : IRulesService
         var rule = new RuleDbModel
         {
             CreatedAt = createDto.CreatedAt,
-            UpdatedAt = createDto.UpdatedAt
+            DestinationBrowser = createDto.DestinationBrowser,
+            IsActive = createDto.IsActive,
+            MatchType = createDto.MatchType,
+            UpdatedAt = createDto.UpdatedAt,
+            UrlPattern = createDto.UrlPattern
         };
 
         if (createDto.Id != null)

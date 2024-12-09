@@ -1,29 +1,26 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using UrlRouterService.Core.Enums;
 
 namespace UrlRouterService.Infrastructure.Models;
 
-[Table("Rules")]
-public class RuleDbModel
+[Table("Histories")]
+public class HistoryDbModel
 {
     [Required()]
     public DateTime CreatedAt { get; set; }
-
-    [StringLength(1000)]
-    public string? DestinationBrowser { get; set; }
 
     [Key()]
     [Required()]
     public string Id { get; set; }
 
-    public bool? IsActive { get; set; }
+    [StringLength(1000)]
+    public string? SelectedBrowser { get; set; }
 
-    public MatchTypeEnum? MatchType { get; set; }
+    public DateTime? Timestamp { get; set; }
 
     [Required()]
     public DateTime UpdatedAt { get; set; }
 
     [StringLength(1000)]
-    public string? UrlPattern { get; set; }
+    public string? Url { get; set; }
 }

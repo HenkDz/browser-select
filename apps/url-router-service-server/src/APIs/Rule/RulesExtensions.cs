@@ -10,14 +10,25 @@ public static class RulesExtensions
         return new Rule
         {
             CreatedAt = model.CreatedAt,
+            DestinationBrowser = model.DestinationBrowser,
             Id = model.Id,
+            IsActive = model.IsActive,
+            MatchType = model.MatchType,
             UpdatedAt = model.UpdatedAt,
+            UrlPattern = model.UrlPattern,
         };
     }
 
     public static RuleDbModel ToModel(this RuleUpdateInput updateDto, RuleWhereUniqueInput uniqueId)
     {
-        var rule = new RuleDbModel { Id = uniqueId.Id };
+        var rule = new RuleDbModel
+        {
+            Id = uniqueId.Id,
+            DestinationBrowser = updateDto.DestinationBrowser,
+            IsActive = updateDto.IsActive,
+            MatchType = updateDto.MatchType,
+            UrlPattern = updateDto.UrlPattern
+        };
 
         if (updateDto.CreatedAt != null)
         {
