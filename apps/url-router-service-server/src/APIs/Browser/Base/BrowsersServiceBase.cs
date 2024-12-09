@@ -26,6 +26,8 @@ public abstract class BrowsersServiceBase : IBrowsersService
         var browser = new BrowserDbModel
         {
             CreatedAt = createDto.CreatedAt,
+            ExecutablePath = createDto.ExecutablePath,
+            Name = createDto.Name,
             UpdatedAt = createDto.UpdatedAt
         };
 

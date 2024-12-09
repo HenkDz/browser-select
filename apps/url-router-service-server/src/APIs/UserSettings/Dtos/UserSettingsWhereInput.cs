@@ -1,14 +1,12 @@
 namespace UrlRouterService.APIs.Dtos;
 
-public class BrowserUpdateInput
+public class UserSettingsWhereInput
 {
     public DateTime? CreatedAt { get; set; }
 
-    public string? ExecutablePath { get; set; }
+    public string? DefaultBrowser { get; set; }
 
     public string? Id { get; set; }
-
-    public string? Name { get; set; }
 
     public DateTime? UpdatedAt { get; set; }
 }
